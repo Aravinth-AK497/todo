@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'TODO LIST',
+        title: 'TODO List',
         home: Scaffold(
           appBar: AppBar(
             title: const Text("TODO LIST"),
