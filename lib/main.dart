@@ -28,11 +28,20 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'TODO List',
+        title: 'TODO LIST',
+        theme: ThemeData(
+          fontFamily: 'Quicksand',
+          primaryColor: const Color(0xFF00C853),
+          scaffoldBackgroundColor: const Color(0xFFF1F8E9),
+          cardColor: const Color.fromARGB(255, 211, 235, 183),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Color(0xFF4A90E2),
+            foregroundColor: Colors.white,
+          ), // Removed invalid 'Theme' parameter
+        ),
         home: Scaffold(
           appBar: AppBar(
             title: const Text("TODO LIST"),
-            backgroundColor: Colors.blue,
           ),
           body: Column(
             children: [
@@ -72,8 +81,12 @@ class _MyAppState extends State<MyApp> {
                     return Card(
                       child: ListTile(
                         title: Text(tasks[index]),
+                        textColor: const Color(0xFF1B5E20),
                         trailing: IconButton(
-                          icon: const Icon(Icons.delete),
+                          icon: const Icon(
+                            Icons.delete,
+                            color: Colors.red,
+                          ),
                           onPressed: () {
                             setState(() {
                               tasks.removeAt(index);
